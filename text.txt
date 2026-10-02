@@ -1,0 +1,236 @@
+FULLSTACK DEVELOPMENT LAB: HOW TO RUN THE PROJECTS
+===================================================
+
+1. WHAT NODE.JS DOES
+--------------------
+Node.js runs JavaScript in a terminal, outside the browser. A Node program
+that starts a web server can send a page or response to a browser. In that
+case, keep the server running in the terminal and open its localhost URL in
+your browser.
+
+Most exercises in this workspace are terminal programs. They print results
+in the terminal and do not open a browser. The Express exercises and the
+React/Vite student-management app have browser pages.
+
+
+2. ONE-TIME SETUP
+-----------------
+Install the current Node.js LTS release from https://nodejs.org/. npm is
+installed with Node.js. In VS Code, open the fullstack_development_lab folder
+and open a terminal with Terminal > New Terminal (or Ctrl+`).
+
+Check that Node.js and npm are available:
+
+	node --version
+	npm --version
+
+In the terminal, go to the workspace root (the folder containing this
+text.txt and the root package.json), then install the root dependencies:
+
+	npm install
+
+The root package provides Express and node-cron for exercises that use them.
+The root package does not define a start command, so `npm start` at the root
+will not start the labs. Run each exercise from its own folder as described
+below. Do not run `npm test` as a start command; the package has a placeholder
+test script that intentionally reports an error.
+
+
+3. RUNNING A TERMINAL-ONLY EXERCISE
+----------------------------------
+Start in the workspace root, change into the exercise folder, then run its
+JavaScript entry file with Node. For example:
+
+	cd .\lab_1\ex_1
+	node app.js
+
+The output appears in the VS Code terminal. These exercises do not have a
+browser URL. To stop a program that keeps running, press Ctrl+C in its
+terminal. To run another exercise, return to the workspace root first:
+
+	cd ..\..
+
+Some exercises read files using paths relative to the current folder. Run
+them from the folder shown below so they can find their data files.
+
+
+4. LAB EXERCISES
+----------------
+
+LAB 1: Node basics and servers
+
+Exercise 1: basic JavaScript and functions; terminal output only.
+
+	cd .\lab_1\ex_1
+	node app.js
+
+Exercise 2: Express routes. First run the root `npm install` from section 2.
+Start the server, then open these URLs in a browser:
+
+	cd .\lab_1\ex_2
+	node app.js
+
+	http://localhost:3000/
+	http://localhost:3000/about
+	http://localhost:3000/home
+	http://localhost:3000/teacher
+
+Exercise 3: a built-in Node HTTP server, a local math module, and file reads.
+Run it from this folder because it reads `data.txt` relative to the current
+folder. Open the printed URL in a browser:
+
+	cd .\lab_1\ex_3
+	node app.js
+
+	http://localhost:3000/
+
+Only run one server using port 3000 at a time. Stop the current server with
+Ctrl+C before starting another one on that port.
+
+
+LAB 2: modules and objects
+
+This exercise runs in the terminal and does not need a browser:
+
+	cd .\lab2\exp1
+	node app.js
+
+
+LAB 3: timers and events
+
+Exercise 1 demonstrates timers and the event loop:
+
+	cd .\lab3\exp1
+	node index.js
+
+Exercise 2 demonstrates EventEmitter events:
+
+	cd .\lab3\exp2
+	node index.js
+
+Both print output in the terminal only.
+
+
+LAB 4: promises and Express
+
+Exercise 1 runs the student admission promise chain in the terminal:
+
+	cd .\lab4\exp1
+	node app.js
+
+Exercise 2 serves the admission flow with Express. Install its local package
+dependencies once, then start the server:
+
+	cd .\lab4\exp2
+	npm install
+	npm start
+
+Open these pages in a browser:
+
+	http://localhost:3000/
+	http://localhost:3000/admission
+
+Stop the server with Ctrl+C before starting another port-3000 server.
+
+
+LAB 5: file operations and streams
+
+Exercise 1 contains file read/write and stream examples. Run from its folder
+so the relative input files are found:
+
+	cd .\lab5\exp1
+	node app.js
+
+The separate read/stream example is:
+
+	node read.js
+
+These are terminal examples, not browser pages. `app.js` writes to `app.txt`,
+so its contents may change when you run it.
+
+Exercise 2 is a stream example, but it currently reads from and writes to the
+same `verylargefile.txt`. Do not run it on your only copy of that file: the
+output stream can truncate or corrupt the input. Make a backup and change the
+output path in the code before trying this exercise. It also waits for
+terminal input; press Ctrl+C to stop it.
+
+
+LAB 8: file I/O and scheduled tasks
+
+Run this from the workspace root. It reads the root `text.txt`, prints file
+read timings, and schedules recurring console messages. It has no browser
+page and continues running until stopped with Ctrl+C:
+
+	node .\lab8\app.js
+
+This guide is now the content of `text.txt`, so the exercise will report the
+size of this guide when it reads the file.
+
+The `lab8\webpack` folder has a webpack configuration but no webpack start
+script or webpack dependency in its package.json, and its app entry appears
+unfinished. It is not currently a ready-to-run browser app. The other files
+in lab8 are JavaScript examples; run an entry file with Node only if you have
+checked that file's contents first.
+
+
+LAB 12: React student-management app (Vite)
+
+This is the main frontend development server in the workspace. Install its
+dependencies once, then start Vite:
+
+	cd .\lab12\student-management
+	npm install
+	npm run dev
+
+Vite prints a local URL, usually http://localhost:5173/. Open the exact URL
+shown in the terminal. Keep the terminal running while using the app. Press
+Ctrl+C to stop it. For a production build and local preview, use:
+
+	npm run build
+	npm run preview
+
+Other folders: `lab_13` and the nested
+`fullstack_development_lab\lab_1\Ep_1` folder are empty in this workspace,
+so they do not currently have an exercise to run.
+
+5. HOW TO USE A BROWSER WITH A NODE SERVER
+-----------------------------------------
+1. Start the server command in the VS Code terminal.
+2. Wait for a message that says the server is running, or for Vite to print
+   its local URL.
+3. Open that URL in a browser. Use `localhost`, not a file path. For example,
+   `http://localhost:3000/admission` opens the admission route in Lab 4.
+4. Keep the terminal open. Closing it or pressing Ctrl+C stops the server.
+5. After changing server code, restart it with Ctrl+C and run the command
+   again. Vite normally reloads frontend changes automatically.
+
+The browser cannot run a Node `.js` file directly. Use `node app.js` in the
+terminal to run Node code. Use a localhost URL in the browser only after a
+server has started.
+
+
+6. COMMON PROBLEMS
+------------------
+- `node` or `npm` is not recognized: install Node.js LTS, then restart VS Code
+  and check `node --version` and `npm --version` again.
+- `Cannot find module`: go to the folder containing the relevant package.json
+  and run `npm install`. For the root Express/node-cron dependencies, run it
+  at the workspace root. For the React app, run it in
+  `lab12\student-management`.
+- `EADDRINUSE` or a server will not start: another process is using that
+  port. Stop the other server with Ctrl+C, or change the port in the exercise.
+- The browser says it cannot connect: confirm the server is still running and
+  use the exact URL and port printed in the terminal.
+- A file is missing: run the command from that exercise's folder, especially
+  for file and stream exercises that use relative paths.
+- A page looks stale: refresh it. For Node/Express changes, restart the server.
+
+
+7. QUICK COMMAND REFERENCE
+--------------------------
+Run a Node script:       node app.js
+Install package files:   npm install
+Start a package script:  npm start (only where package.json defines it)
+Start the React app:     npm run dev (inside lab12\student-management)
+Stop a running process:  Ctrl+C in its terminal
+Open a server in a browser: http://localhost:<port>/
