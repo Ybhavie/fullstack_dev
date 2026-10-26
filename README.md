@@ -1,5 +1,10 @@
 # Full Stack Development Lab (CSA 301)
 
+**Name:** Vaibhavi R Sawant
+**Class / Division:** TYBCA - A
+**Roll Number:** 2408039
+**Seat Number:** 40366
+
 One folder per week. Each week folder has its own README with the
 exact commands to run it.
 
