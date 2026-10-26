@@ -1,0 +1,123 @@
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+  padding: 32px 20px;
+
+  @media (max-width: 1024px) {
+    padding: 24px 16px;
+    gap: 18px;
+  }
+}
+
+.student-management {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.theme-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.current-theme {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.theme-options {
+  display: flex;
+  gap: 8px;
+}
+
+.theme-options button {
+  min-width: 88px;
+  padding: 8px 14px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.theme-options button[aria-pressed='true'] {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.attendance-table {
+  border-collapse: collapse;
+  width: min(100%, 520px);
+}
+
+.attendance-table th,
+.attendance-table td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.attendance-table button {
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.student-cards {
+  display: grid;
+  gap: 12px;
+  width: min(100%, 420px);
+}
+
+.student-card {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.student-card h4 {
+  margin: 8px 0 2px;
+}
+
+.student-name-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.student-name-field input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+}
+
+.student-cards.theme-dark .student-card {
+  border-color: #565966;
+  background: #22242c;
+  color: #f3f4f6;
+}
+
+.student-cards.theme-dark .student-card p {
+  color: #d1d5db;
+}
+
+.student-cards.theme-dark .student-name-field input {
+  border-color: #565966;
+  background: #16171d;
+  color: #f3f4f6;
+}
