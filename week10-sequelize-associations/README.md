@@ -7,6 +7,14 @@ A small library example:
 - `Book` M:N `Category` - a book can have several categories, and a
   category can have many books.
 
+This week uses its own database, `library_associations_db` (separate
+from the `library_db` used in weeks 7-9), since its Book model has a
+different shape. Create it first:
+
+```sql
+CREATE DATABASE library_associations_db;
+```
+
 Edit `config/db.config.js` with your own MySQL details first.
 
 ```

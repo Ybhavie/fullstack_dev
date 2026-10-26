@@ -4,5 +4,5 @@ module.exports = {
     PORT: 3306,
     USER: 'root',
     PASSWORD: 'your_mysql_password',
-    DB: 'library_db',
+    DB: 'library_associations_db',
 };

@@ -44,11 +44,18 @@ npm run dev
 
 ## Weeks 7-10 (Sequelize / MySQL)
 
-These need a running MySQL server. Create the database once:
+These need a running MySQL server. Create the databases once:
 
 ```sql
 CREATE DATABASE library_db;
+CREATE DATABASE library_associations_db;
 ```
+
+Weeks 7-9 share `library_db` (the same Book table evolving across
+those weeks). Week 10 uses its own `library_associations_db` because
+it defines a different schema (Author/Book/BookDetail/Category) -
+keeping it separate avoids colliding with the simpler Book table from
+weeks 8-9.
 
 Then edit `config/db.config.js` in each week's folder with your own
 MySQL host, user and password before running the scripts.
