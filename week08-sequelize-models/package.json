@@ -1,0 +1,16 @@
+{
+  "name": "sequelize-models",
+  "version": "1.0.0",
+  "description": "",
+  "main": "query-basics.js",
+  "scripts": {
+    "migrate": "node migrate.js",
+    "start": "node query-basics.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "mysql2": "^3.11.5",
+    "sequelize": "^6.37.5"
+  }
+}
