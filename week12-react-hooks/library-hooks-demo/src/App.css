@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+.app {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.app.theme-dark {
+    background: #16171d;
+    color: #f3f4f6;
+}
+
+.layout {
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.book-list,
+.cart ul {
+    list-style: none;
+    padding: 0;
+}
+
+.book-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart {
+    min-width: 220px;
+}
