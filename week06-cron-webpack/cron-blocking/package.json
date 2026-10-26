@@ -1,0 +1,14 @@
+{
+  "name": "cron-blocking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "node-cron": "^4.6.0"
+  }
+}
