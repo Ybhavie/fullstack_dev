@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.app ul {
+    list-style: none;
+    padding: 0;
+}
+
+.app li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+}
